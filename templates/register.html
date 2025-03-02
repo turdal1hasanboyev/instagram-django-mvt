@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h2>Ro'yxatdan o'tish</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" class="form-control my-2" placeholder="Username" required>
+        <input type="email" name="email" class="form-control my-2" placeholder="Email" required>
+        <input type="password" name="password1" class="form-control my-2" placeholder="Parol" required>
+        <input type="password" name="password2" class="form-control my-2" placeholder="Parolni tasdiqlang" required>
+        <button type="submit" class="btn btn-primary">Royxatdan otish</button>
+    </form>
+</div>
+
+{% endblock %}

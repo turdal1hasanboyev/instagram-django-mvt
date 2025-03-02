@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h2>Tizimga kirish</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" class="form-control my-2" placeholder="Username" required>
+        <input type="password" name="password" class="form-control my-2" placeholder="Parol" required>
+        <button type="submit" class="btn btn-primary">Kirish</button>
+    </form>
+</div>
+
+{% endblock %}

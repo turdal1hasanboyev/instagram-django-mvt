@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="mb-4">Home</h2>
+
+    <div class="row">
+        <!-- Stories Section -->
+        <div class="col-12 mb-4">
+            <div class="d-flex overflow-auto">
+                {% for story in stories %}
+                <div class="p-2 text-center">
+                    <img src="{{ story.image.url }}" alt="Story" class="rounded-circle" width="60" height="60">
+                    <p class="small">{{ story.user.username }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Posts Section -->
+        <div class="col-12">
+            {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-header d-flex align-items-center">
+                    <img src="{{ post.user.avatar.url }}" class="rounded-circle me-2" width="40" height="40">
+                    <a href="/profile/{{ post.user.username }}/" class="text-decoration-none">{{ post.user.username }}</a>
+                </div>
+                <img src="{{ post.image.url }}" class="card-img-top" alt="Post image">
+                <div class="card-body">
+                    <p class="card-text">{{ post.caption }}</p>
+                    <a href="/post/{{ post.id }}/" class="btn btn-primary">View Post</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
