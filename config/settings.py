@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     "*",
 ]
 
-# AUTH_USER_MODEL = 'instagram.User'
+AUTH_USER_MODEL = 'instagram.User'
 
 
 # Application definition
